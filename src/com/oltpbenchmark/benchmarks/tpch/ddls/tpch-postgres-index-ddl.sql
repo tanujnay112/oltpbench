@@ -24,3 +24,5 @@ create index l_sk_pk on lineitem (l_suppkey asc, l_partkey asc) ;
 create unique index n_nk on nation (n_nationkey asc) ;
 create index n_rk on nation (n_regionkey asc) ;
 create unique index r_rk on region (r_regionkey asc) ;
+CREATE INDEX orders_o_orderdate_o_orderkey ON orders USING btree(o_orderdate, o_orderkey);
+CREATE INDEX lineitem_l_partkey_l_orderkey ON lineitem USING btree(l_partkey, l_orderkey);
